@@ -12,6 +12,6 @@ app.use(morgan("combind"));
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/recipe", recipe_command);
+app.use("/recipes", recipe_command);
 
 app.listen(5000, () => { console.log("Server is up and running !") });

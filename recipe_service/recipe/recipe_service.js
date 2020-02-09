@@ -8,8 +8,7 @@ module.exports = recipeService = ({ makeRecipe }) => {
 
     function addRecipe(recipeInfo) {
         const recipe = makeRecipe(recipeInfo);
-        console.log(recipe.getCategory());
-        console.log(recipe.getTime());
+
         return save({
             _id: recipe.getId(),
             title: recipe.getTitle(),
@@ -30,7 +29,7 @@ module.exports = recipeService = ({ makeRecipe }) => {
             _id: recipeInfo._id
         }
         const recipe = makeRecipe({ existing, ...recipeInfo });
-        console.log("okook")
+
         return updateOne({
             _id: recipe.getId(),
             title: recipe.getTitle(),

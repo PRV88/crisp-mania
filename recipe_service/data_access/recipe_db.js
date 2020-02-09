@@ -7,7 +7,6 @@ module.exports = makeODM = ({ model }) => {
 
     // To save data assest in database 
     function save(recipeInfo) {
-        console.log(recipeInfo);
         try {
             const recipe = model(recipeInfo);
             return recipe.save()
@@ -18,11 +17,8 @@ module.exports = makeODM = ({ model }) => {
 
     // To Update one data assest in database
     function updateOne(recipeInfo) {
-        console.log(recipeInfo._id);
-        console.log(recipeInfo);
-
         try {
-            return model.findOneAndUpdate({ _id: recipeInfo._id }, recipeInfo, { upsert: true });
+            return model.findOneAndUpdate({ _id: recipeInfo._id }, recipeInfo);
         } catch (err) {
             return err;
         }
@@ -30,7 +26,7 @@ module.exports = makeODM = ({ model }) => {
 
     // To  remove data assest in database 
     function removeById({ _id }) {
-        console.log(_id);
+
         try {
             return model.deleteOne({ _id: _id });
         } catch (err) {

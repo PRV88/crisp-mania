@@ -4,7 +4,7 @@ const router = express.Router();
 // Commands 
 const { addRecipeController, editRecipeController, removeRecipeController } = require("../controller/commands/index");
 router.post("/add", addRecipeController);
-router.put("/update", editRecipeController);
+router.put("/edit", editRecipeController);
 router.delete("/remove/:id", removeRecipeController);
 
 
