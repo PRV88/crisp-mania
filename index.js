@@ -5,9 +5,11 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const recipe_command = require("./recipe_service/router/recipe_router");
+const cors = require('cors');
 // const { PORT } = require("./config/app_config");
 // For db conection
 connect();
+app.use(cors());
 app.use(morgan("combind"));
 app.use(helmet());
 app.use(bodyParser.json());
