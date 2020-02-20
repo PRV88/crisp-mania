@@ -5,13 +5,16 @@ module.exports = {
     findRecipe
 }
 
+function findAllRecipes(query) {
 
-
-function findAllRecipes() {
-    return find();
+    return find()
+        .select(query.select)
+        .skip(query.skip)
+        .limit(query.limit);
 }
 
 function findRecipe({ _id }) {
-    console.log("Step Sucess", _id)
-    return findById({ _id });
+
+    return find()
+        .where({ _id: _id })
 }

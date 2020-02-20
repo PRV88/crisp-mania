@@ -7,12 +7,24 @@ module.exports = makeODM = ({ model }) => {
 
     // To save data assest in database 
     function save(recipeInfo) {
-        try {
-            const recipe = model(recipeInfo);
-            return recipe.save()
-        } catch (err) {
-            return err;
-        }
+        // try {
+        const recipe = model(recipeInfo);
+        console.log("okoko")
+            // recipe.save()
+            //     .then((data) => {
+            //         console.log("promise");
+            //         console.log(data);
+            //     })
+            //     .catch((err) => {
+            //         console.log("err");
+            //         console.log(err);
+            //     })
+        return recipe.save()
+        console.log("execute");
+        // } catch (err) {
+        //     return err;
+        // }
+        // console.log("end");
     }
 
     // To Update one data assest in database
